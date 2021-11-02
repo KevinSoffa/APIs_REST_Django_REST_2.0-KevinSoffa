@@ -14,9 +14,14 @@ class CursoAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CursoSerializer
 
 
-class AvaliacoesAPIView(generics.ListAPIView):
+class AvaliacoesAPIView(generics.ListCreateAPIView):
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
+
+    def get_queryset(self):
+        if self.kwargs.get('curso_pk'):
+            return self.queryset.filter(curso_id=self.kwargs.get('curso_id'))
+        return self.queryset.all()
 
 
 class AvaliacaoAPIView(generics.RetrieveUpdateDestroyAPIView):
