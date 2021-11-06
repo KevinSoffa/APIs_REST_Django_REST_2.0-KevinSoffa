@@ -7,4 +7,7 @@
 <li>Utilizando ViewSets e Routers</li>
 <li>Customizando as ViewSets</li>
 <li>Utilizando Relações</li>
+<li>Páginação</li>
+<hr>
+<p>Versão 2.0 Finalizada</p>
 
